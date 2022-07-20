@@ -1,6 +1,10 @@
 {
   "name": "jwt-access-refresh-token-pre",
   "version": "1.0.0",
+  "description": "theo user auth node server",
+  "engines":{
+    "node": "14.x"
+  },
   "main": "index.js",
   "author": "Tom Nagle",
   "license": "MIT",
@@ -11,7 +15,8 @@
     "jsonwebtoken": "^8.5.1"
   },
   "scripts": {
-    "dev": "nodemon --config nodemon.json src/index.ts"
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "start": "node ./src/index.ts"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
