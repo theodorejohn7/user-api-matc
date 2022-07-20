@@ -1,8 +1,8 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import routes from "./routes";
-import deserializeUser from "./middleware/deserializeUser";
+import routes from "./src/routes";
+import deserializeUser from "./src/middleware/deserializeUser";
 
 const app = express();
 
