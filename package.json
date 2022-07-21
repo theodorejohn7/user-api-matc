@@ -5,7 +5,7 @@
   "engines":{
     "node": "14.x"
   },
-  "main": "index.js",
+  "main": "index.ts",
   "author": "Tom Nagle",
   "license": "MIT",
   "dependencies": {
