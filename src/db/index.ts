@@ -1,5 +1,4 @@
-import firebase from "firebase";
-import database from "../firebase/firebase";
+
 import axios from "axios";
 require('dotenv').config()
 
