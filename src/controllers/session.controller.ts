@@ -4,19 +4,19 @@ import { signJWT, verifyJWT } from "../utils/jwt.utils";
 
 // login handler
 export function createSessionHandler(req: Request, res: Response) {
-  const { email, password } = req.body;
+  const { userName, password } = req.body;
 
-  const user = getUser(email);
+  const user:any = getUser(userName);
 
   if (!user || user.password !== password) {
-    return res.status(401).send("Invalid email or password");
+    return res.status(401).send("Invalid userName or password");
   }
 
-  const session = createSession(email, user.name);
+  const session = createSession(userName, user.name);
 
   // create access token
   const accessToken = signJWT(
-    { email: user.email, name: user.name, sessionId: session.sessionId },
+    { userName: user.userName, name: user.name, sessionId: session.sessionId },
     "5s"
   );
 
@@ -43,9 +43,7 @@ export function createSessionHandler(req: Request, res: Response) {
   Object.assign(data, {RefreshToken: refreshToken});
 
 
-
-console.log("@#$#",data)
-
+ 
   return res.send(data);
 }
 

@@ -2,7 +2,7 @@
   "name": "jwt-access-refresh-token-pre",
   "version": "1.0.0",
   "description": "theo user auth node server",
-  "engines":{
+  "engines": {
     "node": "14.x"
   },
   "main": "index.ts",
@@ -11,7 +11,9 @@
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
+    "firebase": "^9.9.0",
     "jsonwebtoken": "^8.5.1"
   },
   "scripts": {
