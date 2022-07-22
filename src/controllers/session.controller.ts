@@ -22,19 +22,31 @@ export function createSessionHandler(req: Request, res: Response) {
 
   const refreshToken = signJWT({ sessionId: session.sessionId }, "1y");
 
-  // set access token in cookie
-  res.cookie("accessToken", accessToken, {
-    maxAge: 300000, // 5 minutes
-    httpOnly: true,
-  });
+  
 
-  res.cookie("refreshToken", refreshToken, {
-    maxAge: 3.154e10, // 1 year
-    httpOnly: true,
-  });
+  // set access token in cookie
+  // res.cookie("accessToken", accessToken, {
+  //   maxAge: 300000, // 5 minutes
+  //   httpOnly: true,
+  // });
+
+  // res.json({token:refreshToken})
+  // res.cookie("refreshToken", refreshToken, {
+  //   maxAge: 3.154e10, // 1 year
+  //   httpOnly: true,
+  // });
 
   // send user back
-  return res.send(session);
+ 
+  const data = session;
+  Object.assign(data, {AccessToken: accessToken});
+  Object.assign(data, {RefreshToken: refreshToken});
+
+
+
+console.log("@#$#",data)
+
+  return res.send(data);
 }
 
 // get the session session

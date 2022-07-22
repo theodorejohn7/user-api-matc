@@ -8,7 +8,7 @@ const users = [
 
 export const sessions: Record<
   string,
-  { sessionId: string; email: string; valid: boolean }
+  { sessionId: string; email: string; valid: boolean;AccessToken:string;RefreshToken:string }
 > = {};
 
 export function getSession(sessionId: string) {
@@ -29,8 +29,9 @@ export function invalidateSession(sessionId: string) {
 
 export function createSession(email: string, name: string) {
   const sessionId = String(Object.keys(sessions).length + 1);
-
-  const session = { sessionId, email, valid: true, name };
+const AccessToken = "";
+const RefreshToken="";
+  const session = { sessionId, email, valid: true, name, AccessToken,RefreshToken};
 
   sessions[sessionId] = session;
 
